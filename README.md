@@ -142,3 +142,40 @@ jsontemplate.json (best for large batches)
 [csvtemplate1.csv](https://github.com/user-attachments/files/20534238/csvtemplate1.csv)
 [csvtemplate2_noheader.csv](https://github.com/user-attachments/files/20534240/csvtemplate2_noheader.csv)
 [jsontemplate.json](https://github.com/user-attachments/files/20534241/jsontemplate.json)
+
+💡 Pro Tip
+
+How to Use QTI Converter via terminal:
+
+Make sure your requirements.txt dependencies are installed in a venv and that the setup.py and converter_final.py files are in the working directory:
+
+Bash
+pip install -r requirements.txt
+ Install your project in editable mode (for development) or as a package:
+
+From your project's root directory:
+Bash
+pip install -e .
+(The -e means "editable," so changes to your converter_final.py will be reflected without re-installing.)
+
+Alternatively, for a standard installation:
+Bash
+pip install .
+ Now you can use the command qtc in your terminal:
+
+-Single file conversion:
+Bash
+qtc raw.csv output_folder/ --title "My Quiz Title"
+or
+Bash
+qtc my_questions.json output_folder/
+
+-Batch conversion (CSV,JSON, OR mixed CSV/JSON files in a directory):
+Bash
+qtc path/to/your/batch_directory/ output_folder/ --batch
+Batch conversion including subfolders:
+Bash
+qtc path/to/your/batch_directory/ output_folder/ --batch --recursive
+With verbose logging:
+Bash
+qtc raw.csv output_folder/ --verbose
