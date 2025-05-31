@@ -155,8 +155,8 @@ your_project_root/
 
   └── src/
     ── qti_converter/
-     ── converter_final.py
-      , __init__.py # <--- Use backticks for this!
+     ── `__init__.py`
+      , converter_final.py
       
    └── ...
 
