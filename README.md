@@ -147,7 +147,19 @@ jsontemplate.json (best for large batches)
 
 How to Use QTI Converter via terminal:
 
-(Make sure your requirements.txt dependencies are installed in a venv and that the setup.py and converter_final.py files are in the working directory)
+your_project_root/
+
+├── setup.py
+
+├── requirements.txt
+
+  └── src/
+    ── qti_converter/
+     ── converter_final.py
+      , __init__.py # <--- Use backticks for this!
+      
+   └── ...
+
 
 Bash
 pip install -r requirements.txt  #Install your project in editable mode (for development) or as a package:
