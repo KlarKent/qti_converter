@@ -147,35 +147,36 @@ jsontemplate.json (best for large batches)
 
 How to Use QTI Converter via terminal:
 
-Make sure your requirements.txt dependencies are installed in a venv and that the setup.py and converter_final.py files are in the working directory:
+(Make sure your requirements.txt dependencies are installed in a venv and that the setup.py and converter_final.py files are in the working directory)
 
 Bash
-pip install -r requirements.txt
- Install your project in editable mode (for development) or as a package:
+pip install -r requirements.txt  #Install your project in editable mode (for development) or as a package:
 
 From your project's root directory:
+
 Bash
-pip install -e .
-(The -e means "editable," so changes to your converter_final.py will be reflected without re-installing.)
+pip install -e .  #(The -e means "editable," so changes to your converter_final.py will be reflected without re-installing.)
 
 Alternatively, for a standard installation:
+
 Bash
 pip install .
- Now you can use the command qtc in your terminal:
 
--Single file conversion:
+Now you can use the command qtc in your terminal:
+
 Bash
-qtc raw.csv output_folder/ --title "My Quiz Title"
+qtc raw.csv output_folder/ --title "My Quiz Title"  #Single file conversion
+
 or
+
 Bash
 qtc my_questions.json output_folder/
 
--Batch conversion (CSV,JSON, OR mixed CSV/JSON files in a directory):
 Bash
-qtc path/to/your/batch_directory/ output_folder/ --batch
-Batch conversion including subfolders:
+qtc path/to/your/batch_directory/ output_folder/ --batch  #Batch conversion (CSV,JSON, OR mixed CSV/JSON files in a directory)
+
 Bash
-qtc path/to/your/batch_directory/ output_folder/ --batch --recursive
-With verbose logging:
+qtc path/to/your/batch_directory/ output_folder/ --batch --recursive  #Batch conversion including subfolders
+
 Bash
-qtc raw.csv output_folder/ --verbose
+qtc raw.csv output_folder/ --verbose  #With verbose logging
