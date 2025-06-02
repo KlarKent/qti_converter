@@ -174,21 +174,7 @@ Alternatively, for a standard installation:
 Bash
 pip install .
 
-Now you can use the command qtc in your terminal:
+Now you can use CLI, using qtic command:
 
-Bash
-qtc raw.csv output_folder/ --title "My Quiz Title"  #Single file conversion
-
-or
-
-Bash
-qtc my_questions.json output_folder/
-
-Bash
-qtc path/to/your/batch_directory/ output_folder/ --batch  #Batch conversion (CSV,JSON, OR mixed CSV/JSON files in a directory)
-
-Bash
-qtc path/to/your/batch_directory/ output_folder/ --batch --recursive  #Batch conversion including subfolders
-
-Bash
-qtc raw.csv output_folder/ --verbose  #With verbose logging
+Bash 
+qtic --help #For directions on CLI commands
