@@ -1,5 +1,5 @@
 # qti_converter
-QTI Converter for macOS (soon to be for Windows and Linux as well)
+QTI Converter for macOS (Intel (x86) and ARM), Windows, and Linux
 Convert assessment files to Canvas-compatible QTI packages
 
 
