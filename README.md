@@ -1,4 +1,4 @@
-# qti_converter
+# QTI Converter
 QTI Converter for macOS (Intel (x86) and ARM), Windows, and Linux
 
 Convert assessment files to Canvas-compatible QTI packages
@@ -6,9 +6,12 @@ Convert assessment files to Canvas-compatible QTI packages
 
 📦 Installation
 
-Download the QTI_Converter_Signed.dmg file.
-Open the DMG and drag QTI_Converter.app to your Applications folder.
+Download the QTI Converter.dmg file.
+Open the DMG and drag QTI Converter.app to your Applications folder.
 
+Or
+
+Download the QTI_Converter_Setup-xxx.exe and double click.
 
 🚀 First-Time Setup
 
@@ -22,6 +25,7 @@ Alternative: Run this command in Terminal:
 bash
 xattr -dr com.apple.quarantine /Applications/QTI_Converter.app  
 
+-Windows Instructions are built into the Executable Installation Package
 
 📝 Input File Formatting
 
@@ -92,12 +96,13 @@ Select Input File: Click "Browse" to choose your .json or .csv. (or drag and dro
 You can also select folders for batch conversion (or drag and drop folder)
 Set Output Directory: Choose where to save the QTI package. (Or drag and drop folder location)
 Convert: Click "Convert" to generate a .zip file.
+
 🗜️ Compressing Output for Canvas
 
 Output:
 
 Generates an uncompressed QTI folder (not a .zip).
-Manually zip it before Canvas import:
+Manually zip it (compress file) before Canvas import:
 bash
 zip -r QTI_Package.zip QTI_Package/
 
@@ -146,7 +151,7 @@ jsontemplate.json (best for large batches)
 
 💡 Pro Tip
 
-How to Use QTI Converter via terminal:
+How to Use Portable CLI qtic via terminal:
 
 your_project_root/
 
@@ -179,3 +184,5 @@ Now you can use CLI, using qtic command:
 
 Bash 
 qtic --help #For directions on CLI commands
+
+<a href="https://www.flaticon.com/free-icons/convert" title="convert icons">Convert icons created by Buandesign - Flaticon</a> 
