@@ -199,3 +199,86 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+#------------------------------------------- my additions below might have redundancies
+
+# Python-specific ignores
+__pycache__/
+*.pyc
+*.pyd
+*.so
+.Python
+
+# Virtual environment
+venv/
+.venv/ # Often used by some tools like poetry, pyenv, or newer venv commands
+
+# Build/Distribution related
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+htmlcov/
+.nox/
+.tox/
+
+# Installer specific outputs
+*.dmg
+*.exe
+*.msi
+*.pkg
+*.app
+*.zip
+*.tar.gz
+*.deb
+*.rpm
+
+# Logs
+*.log
+*.log.*
+!qti_converter_cli.log # If you *absolutely* want to commit a specific log file,
+                       # (e.g., a sample log for debugging), you can 'un-ignore' it
+                       # but generally logs are ignored.
+
+# Sensitive files
+certs/                 # Your certificate and key files
+*.key                  # Specific key files if not in certs/
+*.crt                  # Specific certificate files if not in certs/
+*.p12                  # PKCS#12 archive
+*.env                  # Environment variable files (e.g., .env)
+.flaskenv
+codesign.cnf
+create_self_signed_cert.sh
+
+# macOS-specific ignores
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux-specific ignores
+.fuse_hidden*
+*.swp
+*.bak
+*.py~
+.nfs*
+
+# Windows-specific ignores
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE-specific ignores
+.idea/                 # IntelliJ / PyCharm
+.vscode/               # VS Code
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.iml
+
+# PyInstaller ignores
+# The PyInstaller spec file itself should usually be committed,
+# but its temporary files and outputs are covered by build/ and dist/.
+# If PyInstaller creates any other specific temp files outside build/ and dist/,
+# list them here, e.g.,
+# pyinstaller_temp_*/
