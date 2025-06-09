@@ -36,75 +36,156 @@ Prepare your input files as follows:
 
 1. CSV (Two Formats)
 
+
 Format 1: Explicit Headers
+
 Type,Points,Question,answer_1,answer_2,answer_3,answer_4,correct_answer
+
 multiple_choice,1,"What is 2+2?",3,4,5,6,2
+
 true_false,1,"The Earth is round.",,,,,true
+
 true_false,1,"The Moon is made of cheese.",,,,,false
+
 fill_blank,1,"The [blank] is the powerhouse of the cell.",,,,,mitochondria
 
-Format 2: Minimal Headers (Remove Header Row Before Use)
+
+
+
+Format 2: Minimal (Remove Header Row Before Use)
+
 MC,,1,What is 2+2?,2,3,4,5,6
+
 TF,,1,The Earth is round.,1,,,,
+
 TF,,1,The Moon is made of cheese.,0,,,,
+
 FB,,1,The [blank] is the powerhouse of the cell.,mitochondria,,,,
+
+
+
+
 
 2. JSON
 
 [
+
   {
+  
     "question": "What is 2+2?",
+    
     "options": { "a": "3", "b": "4", "c": "5", "d": "6" },
+    
     "correct_answer": "b",
+    
     "type": "multiple_choice",
+    
     "points": 1
+    
   },
+  
   {
+  
     "question": "The Earth is round.",
+    
     "correct_answer": true,
+    
     "type": "true_false",
+    
     "points": 1
+    
   },
+  
   {
+  
     "question": "The Moon is made of cheese.",
+    
     "correct_answer": false,
+    
     "type": "true_false",
+    
     "points": 1
+    
   },
+  
   {
+  
     "question": "The [blank] is the powerhouse of the cell.",
+    
     "correct_answer": "mitochondria",
+    
     "type": "fill_in_blank",
+    
     "points": 1
+    
   }
+  
 ]
 
 
-✨Key Notes for Users
 
+
+
+3. TXT
+
+\`q\` What is 2+2? \`mc\` \`p1\`
+
+1.  3
+   
+2.  4
+   
+3.  5
+   
+4.  6
+   
+\`a\`
+
+2.  4
+
+\`q\` The Earth is round. \`tf\` \`p1\`
+
+\`a\`
+
+true
+
+\`q\` The Moon is made of cheese. \`tf\` \`p1\`
+
+\`a\`
+
+false
+
+\`q\` "The [blank] is the powerhouse of the cell. \`fb\` \`p1\`
+
+\`a\`
+
+mitochondria
+
+
+❗ There is a Help drop down from the Menu Bar if you forget the formatting
+
+
+✨ Key Notes for Users
+
+Points assigned to questions is optional and if not entered Canvas will default to 1 point per question.
 True/False in CSV Format 2:
 Use 1 for true, 0 for false in the correct_answer column.
-Fill-in-the-Blank:
-For CSV: Put the answer directly in correct_answer.
-For JSON: Use "type": "fill_in_blank".
+
+
+🗜️ When there is more than one correct answer
+
+Fill-in-the-Blank can have multiple correct answers assigned:
+For CSV: Put the answers directly in correct_answer column separated by pipes (|).
+For JSON: Put the answers in brackets separated by commas in the line for "correct_answer": ["answer1", "answer2"...].
+For TXT: Put the answers in the line under the `a` tag line and simply separate answers by a comma.
 
 
 🖥️ Using the App
 
 Launch QTI_Converter.app.
-Select Input File: Click "Browse" to choose your .json or .csv. (or drag and drop)
-You can also select folders for batch conversion (or drag and drop folder)
-Set Output Directory: Choose where to save the QTI package. (Or drag and drop folder location)
-Convert: Click "Convert" to generate a .zip file.
-
-🗜️ Compressing Output for Canvas
-
-Output:
-
-Generates an uncompressed QTI folder (not a .zip).
-Manually zip it (compress file) before Canvas import:
-bash
-zip -r QTI_Package.zip QTI_Package/
+Select Input File: Click "Browse" to choose your .json .txt or .csv (or drag and drop).
+You can also select folders for batch conversion (or drag and drop folder).
+Set Output Directory: Choose where to save the QTI package (Or drag and drop folder location).
+Convert: Click "Convert" to generate a .zip file. 
 
 
 🎓 Importing to Canvas
@@ -126,8 +207,6 @@ This app is self-signed. For enterprise use.
 © 2025 KlarKent | MIT License
 
 
-❗ Note: The app does not zip QTI outputs automatically. Use Terminal or right-click → "Compress" before Canvas upload.
-
 🔍 Troubleshooting
 
 "Invalid File" Error: Verify your CSV/JSON matches the templates above.
@@ -141,13 +220,18 @@ Canvas Upload Fails: Re-zip the QTI folder manually if needed.
 📎 Included Templates:
 
 csvtemplate1.csv (Explicit headers)
+
 csvtemplate2_noheader.csv (Minimalist)
+
 jsontemplate.json (best for large batches)
 
+txttemplate.txt (to quickly create quizzes)
 
-[csvtemplate1.csv](https://github.com/user-attachments/files/20534238/csvtemplate1.csv)
-[csvtemplate2_noheader.csv](https://github.com/user-attachments/files/20534240/csvtemplate2_noheader.csv)
-[jsontemplate.json](https://github.com/user-attachments/files/20534241/jsontemplate.json)
+
+[csvtemplate1.csv](https://github.com/user-attachments/files/20534238/csvtemplate1.csv),
+[csvtemplate2_noheader.csv](https://github.com/user-attachments/files/20534240/csvtemplate2_noheader.csv),
+[jsontemplate.json](https://github.com/user-attachments/files/20534241/jsontemplate.json),
+[txttemplate.txt](https://github.com/user-attachments/files/20648213/txttemplate.txt)
 
 💡 Pro Tip
 
@@ -156,6 +240,7 @@ How to Use Portable CLI qtic via terminal:
 your_project_root/
 
 ├── setup.py
+
 
 ├── requirements.txt
 
