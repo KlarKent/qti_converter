@@ -4,6 +4,7 @@ QTI Converter for macOS (Intel (x86) and ARM), Windows, and Linux
 Convert assessment files to Canvas-compatible QTI packages
 
 
+<br>
 📦 Installation
 
 Download the QTI Converter.dmg file.
@@ -13,6 +14,8 @@ Or
 
 Download the QTI_Converter_Setup-xxx.exe and double click.
 
+
+<br>
 🚀 First-Time Setup
 
 Bypass macOS Security Warnings
@@ -27,6 +30,8 @@ xattr -dr com.apple.quarantine /Applications/QTI_Converter.app
 
 -Windows Instructions are built into the Executable Installation Package
 
+
+<br>
 📝 Input File Formatting
 
 Prepare your input files as follows:
@@ -47,11 +52,11 @@ true_false,1,"The Earth is round.",,,,,true
 
 true_false,1,"The Moon is made of cheese.",,,,,false
 
-fill_blank,1,"The [blank] is the powerhouse of the cell.",,,,,mitochondria
+fill_blank,1,"The `[blank]` is the powerhouse of the cell.",,,,,mitochondria
 
 
 
-
+<br>
 Format 2: Minimal (Remove Header Row Before Use)
 
 MC,,1,What is 2+2?,2,3,4,5,6
@@ -60,14 +65,13 @@ TF,,1,The Earth is round.,1,,,,
 
 TF,,1,The Moon is made of cheese.,0,,,,
 
-FB,,1,The [blank] is the powerhouse of the cell.,mitochondria,,,,
-
+FB,,1,The `[blank]` is the powerhouse of the cell.,mitochondria,,,,
 
 
 
 
 2. JSON
-
+```
 [
 
   {
@@ -121,11 +125,11 @@ FB,,1,The [blank] is the powerhouse of the cell.,mitochondria,,,,
   }
   
 ]
+```
 
 
 
-
-
+<br>
 3. TXT
 
 \`q\` What is 2+2? \`mc\` \`p1\`
@@ -154,7 +158,7 @@ true
 
 false
 
-\`q\` "The [blank] is the powerhouse of the cell. \`fb\` \`p1\`
+\`q\` "The `[blank]` is the powerhouse of the cell. \`fb\` \`p1\`
 
 \`a\`
 
@@ -164,6 +168,7 @@ mitochondria
 ❗ There is a Help drop down from the Menu Bar if you forget the formatting
 
 
+<br>
 ✨ Key Notes for Users
 
 Points assigned to questions is optional and if not entered Canvas will default to 1 point per question.
@@ -171,14 +176,16 @@ True/False in CSV Format 2:
 Use 1 for true, 0 for false in the correct_answer column.
 
 
+<br>
 🗜️ When there is more than one correct answer
 
 Fill-in-the-Blank can have multiple correct answers assigned:
 For CSV: Put the answers directly in correct_answer column separated by pipes (|).
-For JSON: Put the answers in brackets separated by commas in the line for "correct_answer": ["answer1", "answer2"...].
+For JSON: Put the answers in brackets separated by commas in the line for "correct_answer": `["answer1", "answer2"...]`.
 For TXT: Put the answers in the line under the `a` tag line and simply separate answers by a comma.
 
 
+<br>
 🖥️ Using the App
 
 Launch QTI_Converter.app.
@@ -188,6 +195,7 @@ Set Output Directory: Choose where to save the QTI package (Or drag and drop fol
 Convert: Click "Convert" to generate a .zip file. 
 
 
+<br>
 🎓 Importing to Canvas
 
 In Canvas, go to your course → Settings → Import Course Content.
@@ -197,16 +205,19 @@ Add to Module:
 Navigate to Modules → "+" → Add Quiz to "module" → Select the imported quiz.
 
 
+<br>
 🔒 Security Note
 
 This app is self-signed. For enterprise use.
 
 
+<br>
 📜 License
 
 © 2025 KlarKent | MIT License
 
 
+<br>
 🔍 Troubleshooting
 
 "Invalid File" Error: Verify your CSV/JSON matches the templates above.
@@ -217,6 +228,7 @@ Blank Output: Ensure your input file follows the template format.
 Canvas Upload Fails: Re-zip the QTI folder manually if needed.
 
 
+<br>
 📎 Included Templates:
 
 csvtemplate1.csv (Explicit headers)
@@ -233,25 +245,28 @@ txttemplate.txt (to quickly create quizzes)
 [jsontemplate.json](https://github.com/user-attachments/files/20534241/jsontemplate.json),
 [txttemplate.txt](https://github.com/user-attachments/files/20648213/txttemplate.txt)
 
+
+<br>
 💡 Pro Tip
 
 How to Use Portable CLI qtic via terminal:
 
+```
 your_project_root/
-
-├── setup.py
-
-
+│
+├── src/
+│   └── qti_converter/
+│       ├── __init__.py  
+│       ├── converter_final.py
+│       └── ...
+│ 
 ├── requirements.txt
+│ 
+├── setup.py
+└── ...
+```
 
-  └── src/
-    ── qti_converter/
-     ── `__init__.py`
-      , converter_final.py
-      
-   └── ...
-
-
+<br>
 Bash
 pip install -r requirements.txt  #Install your project in editable mode (for development) or as a package:
 
