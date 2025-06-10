@@ -241,7 +241,7 @@ This app is self-signed. For enterprise use.
 <br>
 🔍 Troubleshooting
 
-"Invalid File" Error: Verify your CSV/JSON matches the templates above.
+"Invalid File" Error: Verify your CSV/JSON/TXT matches the templates above.
 Canvas Rejection: Ensure you select QTI .zip file during import.
 
 "App is Damaged" Error: Reinstall and bypass security as shown above.
