@@ -203,7 +203,7 @@ The script is "LaTeX-aware." Text inside math delimiters (```$$...$$``` for bloc
 Fill-in-the-Blank can have multiple correct answers assigned:
 For CSV: Put the answers directly in correct_answer column separated by pipes (|).
 For JSON: Put the answers in brackets separated by commas in the line for "correct_answer": `["answer1", "answer2"...]`.
-For TXT: Put the answers in the line under the `a` tag line and simply separate answers by a comma.
+For TXT: Put the answers in the line under the \`a\` tag line and simply separate answers by a comma.
 
 
 <br>
