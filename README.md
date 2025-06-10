@@ -176,7 +176,7 @@ Points assigned to questions is optional and if not entered Canvas will default 
 True/False in CSV Format 2:
 Use 1 for true, 0 for false in the correct_answer column.
 
-You can now link to local images within your source files using a simple tag format: \`img(image_filename.png)\`.
+You can link to local images within your source files using a simple tag format: \`img(image_filename.png)\`.
 
 Example in a .txt file:
 
@@ -194,7 +194,7 @@ Mitochondrion
 ```
 The script will automatically find mitochondria_diagram.jpg in the same folder as your source file, embed it correctly in the QTI, and bundle it into the final .zip package. This works for question stems and multiple-choice options.
 
-LaTeX Support: Mathematical equations written in LaTeX ```($$...$$ or \(...\))``` are preserved correctly.
+The script is "LaTeX-aware." Text inside math delimiters (```$$...$$``` for block equations and ```\(...\)``` for inline equations) will be passed through to Canvas without being HTML-escaped. This ensures your mathematical formulas render correctly.
 
 
 <br>
