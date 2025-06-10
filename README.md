@@ -172,8 +172,29 @@ mitochondria
 ✨ Key Notes for Users
 
 Points assigned to questions is optional and if not entered Canvas will default to 1 point per question.
+
 True/False in CSV Format 2:
 Use 1 for true, 0 for false in the correct_answer column.
+
+You can now link to local images within your source files using a simple tag format: \`img(image_filename.png)\`.
+
+Example in a .txt file:
+
+```
+`q`
+What is shown in the diagram below?
+`img(mitochondria_diagram.jpg)`
+`mc` `p5`
+Cell Membrane
+Nucleus
+Mitochondrion
+Ribosome
+`a`
+Mitochondrion
+```
+The script will automatically find mitochondria_diagram.jpg in the same folder as your source file, embed it correctly in the QTI, and bundle it into the final .zip package. This works for question stems and multiple-choice options.
+
+LaTeX Support: Mathematical equations written in LaTeX ```($$...$$ or \(...\))``` are preserved correctly.
 
 
 <br>
